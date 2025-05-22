@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>קלמנטי - יוצר תוכן טיקטוק מקצועי</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=Urbanist:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500&family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -12,11 +15,13 @@
         }
 
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
             line-height: 1.6;
             color: #333;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
+            font-weight: 400;
+            overflow-x: hidden;
         }
 
         .container {
@@ -34,32 +39,133 @@
         }
 
         .logo {
-            font-size: 2.5rem;
-            font-weight: bold;
-            background: linear-gradient(45deg, #ff0050, #ff4081, #9c27b0);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: white;
             margin-bottom: 10px;
+            position: relative;
+            display: inline-block;
+            z-index: 2;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+            letter-spacing: -0.02em;
+        }
+
+        .logo::before {
+            content: '';
+            position: absolute;
+            top: 10%;
+            left: -5%;
+            right: -5%;
+            bottom: 25%;
+            background: linear-gradient(90deg, 
+                #8e44ad 0%, 
+                #8e44ad 20%, 
+                #9b59b6 40%, 
+                #8e44ad 60%,
+                #9b59b6 80%,
+                #8e44ad 100%
+            );
+            transform: rotate(-1.5deg);
+            z-index: -1;
+            border-radius: 6px 3px 4px 2px;
+            box-shadow: 0 2px 4px rgba(142, 68, 173, 0.3);
+            width: 0;
+            animation: drawMarker 2s ease-out 0.5s forwards;
+        }
+
+        .logo::after {
+            content: '';
+            position: absolute;
+            top: 8%;
+            left: -4%;
+            right: -6%;
+            bottom: 22%;
+            background: linear-gradient(90deg, 
+                rgba(155, 89, 182, 0.7) 0%, 
+                rgba(155, 89, 182, 0.8) 30%, 
+                rgba(155, 89, 182, 0.6) 70%,
+                rgba(155, 89, 182, 0.8) 100%
+            );
+            transform: rotate(0.8deg);
+            z-index: -2;
+            border-radius: 8px 2px 6px 1px;
+            width: 0;
+            animation: drawMarkerShadow 2s ease-out 0.7s forwards;
+        }
+
+        @keyframes drawMarker {
+            from {
+                width: 0;
+                right: -5%;
+            }
+            to {
+                width: calc(100% + 10%);
+                right: -5%;
+            }
+        }
+
+        @keyframes drawMarkerShadow {
+            from {
+                width: 0;
+                right: -6%;
+            }
+            to {
+                width: calc(100% + 10%);
+                right: -6%;
+            }
         }
 
         .tagline {
-            font-size: 1.2rem;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 500;
             color: #666;
             margin-bottom: 20px;
+            letter-spacing: 0.01em;
+        }
+
+        .tiktok-highlight {
+            position: relative;
+            display: inline-block;
+            font-weight: 600;
+        }
+
+        .tiktok-highlight::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            right: 0;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(270deg, #e74c3c, #c0392b);
+            border-radius: 2px;
+            animation: drawLine 2s ease-out 2.5s forwards;
+        }
+
+        @keyframes drawLine {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
         }
 
         .whatsapp-contact {
+            font-family: 'Poppins', sans-serif;
             display: inline-flex;
             align-items: center;
             background: #25d366;
             color: white;
-            padding: 12px 24px;
+            padding: 14px 28px;
             border-radius: 50px;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 600;
+            font-size: 1rem;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             margin-top: 10px;
+            letter-spacing: 0.01em;
         }
 
         .whatsapp-contact:hover {
@@ -113,26 +219,33 @@
         }
 
         .hero-title {
-            font-size: 2.5rem;
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.75rem;
+            font-weight: 700;
             margin-bottom: 20px;
             background: linear-gradient(45deg, #ff0050, #ff4081);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            letter-spacing: -0.02em;
         }
 
         .hero-subtitle {
-            font-size: 1.3rem;
-            color: #666;
+            font-family: 'Urbanist', sans-serif;
+            font-size: 1.35rem;
+            font-weight: 500;
+            color: #555;
             margin-bottom: 30px;
-            line-height: 1.6;
+            line-height: 1.8;
+            letter-spacing: 0.01em;
         }
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
             margin-bottom: 40px;
+            padding: 0 10px;
         }
 
         .service-card {
@@ -140,30 +253,69 @@
             border-radius: 15px;
             padding: 30px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
             text-align: center;
+            opacity: 0;
+            transform: translateX(60px);
+            transition: all 0.8s ease;
+        }
+
+        .service-card.animate {
+            opacity: 1;
+            transform: translateX(0);
         }
 
         .service-card:hover {
-            transform: translateY(-5px);
+            transform: translateX(0);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
         }
 
         .service-icon {
-            font-size: 3rem;
-            margin-bottom: 20px;
+            font-size: 3.2rem;
+            margin-bottom: 22px;
+            transform: scale(0.8);
+            transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .service-card.animate .service-icon {
+            transform: scale(1);
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.3) translateY(-8px);
         }
 
         .service-title {
+            font-family: 'Poppins', sans-serif;
             font-size: 1.4rem;
-            margin-bottom: 15px;
+            font-weight: 600;
+            margin-bottom: 16px;
             color: #333;
-            font-weight: bold;
+            letter-spacing: -0.01em;
+            opacity: 0;
+            transform: translateX(30px);
+            transition: all 0.6s ease 0.3s;
+        }
+
+        .service-card.animate .service-title {
+            opacity: 1;
+            transform: translateX(0);
         }
 
         .service-description {
-            color: #666;
-            line-height: 1.6;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 400;
+            color: #555;
+            line-height: 1.75;
+            font-size: 1.08rem;
+            letter-spacing: 0.02em;
+            opacity: 0;
+            transform: translateX(30px);
+            transition: all 0.6s ease 0.4s;
+        }
+
+        .service-card.animate .service-description {
+            opacity: 1;
+            transform: translateX(0);
         }
 
         .tiktok-section {
@@ -172,26 +324,48 @@
             padding: 40px;
             text-align: center;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateX(40px);
+            transition: all 0.8s ease;
+        }
+
+        .tiktok-section.animate {
+            opacity: 1;
+            transform: translateX(0);
         }
 
         .tiktok-title {
-            font-size: 2rem;
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 600;
             margin-bottom: 20px;
             color: #333;
+            letter-spacing: -0.01em;
+        }
+
+        .tiktok-section > p {
+            font-family: 'Lexend', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 400;
+            color: #555;
+            line-height: 1.7;
+            letter-spacing: 0.01em;
         }
 
         .tiktok-link {
+            font-family: 'Poppins', sans-serif;
             display: inline-flex;
             align-items: center;
             background: linear-gradient(45deg, #ff0050, #000);
             color: white;
-            padding: 15px 30px;
+            padding: 16px 32px;
             border-radius: 50px;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 600;
             font-size: 1.1rem;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             margin-top: 20px;
+            letter-spacing: 0.01em;
         }
 
         .tiktok-link:hover {
@@ -220,17 +394,26 @@
         }
 
         .stat-number {
-            font-size: 2.5rem;
-            font-weight: bold;
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 800;
             background: linear-gradient(45deg, #ff0050, #ff4081);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            letter-spacing: -0.02em;
         }
 
         .stat-label {
+            font-family: 'Montserrat', sans-serif;
             color: #666;
             font-weight: 500;
+            font-size: 1.05rem;
+            letter-spacing: 0.01em;
         }
 
         .footer {
@@ -240,22 +423,38 @@
             margin-top: 40px;
         }
 
+        .footer p {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            color: #666;
+            letter-spacing: 0.01em;
+        }
+
         @media (max-width: 768px) {
+            body {
+                overflow-x: hidden;
+            }
+
             .logo {
-                font-size: 2rem;
+                font-size: 2.3rem;
             }
 
             .hero-title {
-                font-size: 2rem;
+                font-size: 2.2rem;
             }
 
             .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .tagline {
                 font-size: 1.1rem;
             }
 
             .hero-section {
                 flex-direction: column;
                 text-align: center;
+                padding: 30px 20px;
             }
 
             .clementy-photo {
@@ -264,10 +463,76 @@
 
             .services-grid {
                 grid-template-columns: 1fr;
+                gap: 20px;
+                padding: 0 5px;
+            }
+
+            .service-card {
+                padding: 25px 20px;
+                margin: 0 auto;
+                max-width: 100%;
+                transform: translateX(40px);
+            }
+
+            .service-title {
+                font-size: 1.3rem;
+            }
+
+            .service-description {
+                font-size: 1rem;
+            }
+
+            .tiktok-section {
+                padding: 30px 20px;
+                transform: translateX(30px);
+            }
+
+            .tiktok-title {
+                font-size: 1.9rem;
             }
 
             .stats {
                 flex-direction: column;
+                gap: 15px;
+            }
+
+            .stat-number {
+                font-size: 2.3rem;
+            }
+
+            .container {
+                padding: 0 15px;
+            }
+
+            .service-card:hover .service-icon {
+                transform: scale(1.2) translateY(-6px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .service-card {
+                padding: 20px 15px;
+                transform: translateX(30px);
+            }
+
+            .hero-section {
+                padding: 25px 15px;
+            }
+
+            .tiktok-section {
+                padding: 25px 15px;
+                transform: translateX(20px);
+            }
+
+            .service-card:hover .service-icon {
+                transform: scale(1.15) translateY(-4px);
+            }
+        }
+
+        /* Add touch support for mobile devices */
+        @media (hover: none) and (pointer: coarse) {
+            .service-card:active .service-icon {
+                transform: scale(1.3) translateY(-8px);
             }
         }
     </style>
@@ -276,7 +541,7 @@
     <header class="header">
         <div class="container">
             <div class="logo">קלמנטי</div>
-            <div class="tagline">יוצר תוכן מקצועי בטיקטוק • מתמחה בסרטונים ויראליים</div>
+            <div class="tagline">יוצר תוכן מקצועי ב<span class="tiktok-highlight">טיקטוק</span> • מתמחה בסרטונים ויראליים</div>
             <a href="https://wa.me/972559512482" class="whatsapp-contact" target="_blank">
                 <svg class="whatsapp-icon" viewBox="0 0 24 24">
                     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.525 3.687"/>
@@ -303,15 +568,15 @@
                 <div style="width: 100%; margin-top: 30px;">
                     <div class="stats">
                         <div class="stat-item">
-                            <div class="stat-number">7.3K</div>
+                            <div class="stat-number" data-target="7300" data-suffix="K">0</div>
                             <div class="stat-label">עוקבים</div>
                         </div>
                         <div class="stat-item">
-                            <div class="stat-number">553.7K</div>
+                            <div class="stat-number" data-target="553700" data-suffix="K">0</div>
                             <div class="stat-label">לייקים</div>
                         </div>
                         <div class="stat-item">
-                            <div class="stat-number">3+</div>
+                            <div class="stat-number" data-target="3" data-suffix="+">0</div>
                             <div class="stat-label">שנות ניסיון</div>
                         </div>
                     </div>
@@ -362,10 +627,6 @@
                     </svg>
                     צפה בעמוד הטיקטוק שלי
                 </a>
-                
-                <p style="margin-top: 20px; color: #666; font-size: 0.9rem;">
-                    *העמוד מכיל דוגמאות מעשיות של פרויקטים מוצלחים שביצעתי לעסקים ושהביאו לחשיפה משמעותית
-                </p>
             </section>
         </div>
     </main>
@@ -375,5 +636,136 @@
             <p>&copy; 2025 קלמנטי - יוצר תוכן טיקטוק מקצועי. כל הזכויות שמורות.</p>
         </div>
     </footer>
+
+    <script>
+        // Function to animate numbers counting up
+        function animateNumber(element, start, end, duration, suffix = '') {
+            const startTime = performance.now();
+            const range = end - start;
+            
+            function updateNumber(currentTime) {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                
+                // Use easeOutCubic for smooth animation
+                const easedProgress = 1 - Math.pow(1 - progress, 3);
+                const current = Math.floor(start + (range * easedProgress));
+                
+                // Format number with appropriate display
+                let displayValue = current;
+                if (suffix === 'K') {
+                    if (current >= 1000) {
+                        displayValue = (current / 1000).toFixed(1) + 'K';
+                    } else {
+                        displayValue = current.toString();
+                    }
+                } else {
+                    displayValue = current + suffix;
+                }
+                
+                element.textContent = displayValue;
+                
+                if (progress < 1) {
+                    requestAnimationFrame(updateNumber);
+                }
+            }
+            
+            requestAnimationFrame(updateNumber);
+        }
+
+        // Function to check if element is in viewport
+        function isInViewport(element) {
+            const rect = element.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        // Initialize animation when stats section comes into view
+        function initStatsAnimation() {
+            const statNumbers = document.querySelectorAll('.stat-number');
+            let animated = false;
+            
+            function checkAndAnimate() {
+                if (animated) return;
+                
+                const statsSection = document.querySelector('.stats');
+                if (isInViewport(statsSection) || window.scrollY > statsSection.offsetTop - window.innerHeight + 100) {
+                    animated = true;
+                    
+                    statNumbers.forEach((element, index) => {
+                        const target = parseInt(element.getAttribute('data-target'));
+                        const suffix = element.getAttribute('data-suffix') || '';
+                        
+                        // Add small delay between animations for better effect
+                        setTimeout(() => {
+                            animateNumber(element, 0, target, 2000, suffix);
+                        }, index * 200);
+                    });
+                }
+            }
+            
+            // Check on page load
+            setTimeout(checkAndAnimate, 500);
+            
+            // Check on scroll
+            window.addEventListener('scroll', checkAndAnimate);
+        }
+
+        // Intersection Observer for scroll animations
+        function initScrollAnimations() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate');
+                    }
+                });
+            }, observerOptions);
+
+            // Observe service cards
+            const serviceCards = document.querySelectorAll('.service-card');
+            serviceCards.forEach((card, index) => {
+                // Add staggered delay for each card
+                card.style.transitionDelay = `${index * 0.15}s`;
+                observer.observe(card);
+            });
+
+            // Observe TikTok section
+            const tiktokSection = document.querySelector('.tiktok-section');
+            if (tiktokSection) {
+                observer.observe(tiktokSection);
+            }
+        }
+
+        // Start animations when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            initStatsAnimation();
+            initScrollAnimations();
+        });
+
+        // Handle resize events for mobile optimization
+        let resizeTimer;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => {
+                // Re-check animations on resize to handle orientation changes
+                const cards = document.querySelectorAll('.service-card:not(.animate)');
+                cards.forEach(card => {
+                    const rect = card.getBoundingClientRect();
+                    if (rect.top < window.innerHeight && rect.bottom > 0) {
+                        card.classList.add('animate');
+                    }
+                });
+            }, 250);
+        });
+    </script>
 </body>
 </html>
