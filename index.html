@@ -17,6 +17,7 @@
             color: #333;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
+            overflow-x: hidden;
         }
 
         .container {
@@ -31,6 +32,7 @@
             padding: 20px 0;
             text-align: center;
             box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            animation: slideDown 0.8s ease-out;
         }
 
         .logo {
@@ -41,12 +43,14 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
             margin-bottom: 10px;
+            animation: fadeInScale 1s ease-out 0.3s both;
         }
 
         .tagline {
             font-size: 1.2rem;
             color: #666;
             margin-bottom: 20px;
+            animation: fadeInUp 0.8s ease-out 0.5s both;
         }
 
         .whatsapp-contact {
@@ -60,6 +64,7 @@
             font-weight: bold;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             margin-top: 10px;
+            animation: bounceIn 1s ease-out 0.7s both;
         }
 
         .whatsapp-contact:hover {
@@ -89,6 +94,7 @@
             align-items: center;
             gap: 40px;
             flex-wrap: wrap;
+            animation: slideInLeft 1s ease-out;
         }
 
         .hero-content {
@@ -98,6 +104,7 @@
 
         .hero-image {
             flex: 0 0 auto;
+            animation: slideInRight 1s ease-out 0.3s both;
         }
 
         .clementy-photo {
@@ -119,6 +126,7 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
         }
 
         .hero-subtitle {
@@ -126,6 +134,7 @@
             color: #666;
             margin-bottom: 30px;
             line-height: 1.6;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
         }
 
         .services-grid {
@@ -142,7 +151,15 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             text-align: center;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: slideUpFade 0.8s ease-out both;
         }
+
+        .service-card:nth-child(1) { animation-delay: 0.2s; }
+        .service-card:nth-child(2) { animation-delay: 0.4s; }
+        .service-card:nth-child(3) { animation-delay: 0.6s; }
+        .service-card:nth-child(4) { animation-delay: 0.8s; }
 
         .service-card:hover {
             transform: translateY(-5px);
@@ -152,6 +169,7 @@
         .service-icon {
             font-size: 3rem;
             margin-bottom: 20px;
+            animation: bounceIcon 2s ease-in-out infinite;
         }
 
         .service-title {
@@ -172,12 +190,14 @@
             padding: 40px;
             text-align: center;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            animation: slideInRight 1s ease-out 1s both;
         }
 
         .tiktok-title {
             font-size: 2rem;
             margin-bottom: 20px;
             color: #333;
+            animation: fadeInUp 0.8s ease-out 1.2s both;
         }
 
         .tiktok-link {
@@ -192,11 +212,13 @@
             font-size: 1.1rem;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             margin-top: 20px;
+            animation: pulse 2s ease-in-out infinite;
         }
 
         .tiktok-link:hover {
             transform: translateY(-2px);
             box-shadow: 0 10px 25px rgba(255, 0, 80, 0.3);
+            animation: none;
         }
 
         .tiktok-icon {
@@ -217,7 +239,14 @@
             text-align: center;
             flex: 1;
             min-width: 150px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: slideUpFade 0.8s ease-out both;
         }
+
+        .stat-item:nth-child(1) { animation-delay: 0.6s; }
+        .stat-item:nth-child(2) { animation-delay: 0.8s; }
+        .stat-item:nth-child(3) { animation-delay: 1s; }
 
         .stat-number {
             font-size: 2.5rem;
@@ -226,6 +255,7 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            animation: countUp 2s ease-out;
         }
 
         .stat-label {
@@ -238,6 +268,157 @@
             text-align: center;
             padding: 30px 0;
             margin-top: 40px;
+            animation: fadeIn 1s ease-out 1.5s both;
+        }
+
+        /* Keyframe Animations */
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUpFade {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInScale {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes bounceIn {
+            0% {
+                transform: scale(0.3);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            70% {
+                transform: scale(0.9);
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes bounceIcon {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(255, 0, 80, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(255, 0, 80, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(255, 0, 80, 0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes countUp {
+            from {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* Enhanced hover effects */
+        .service-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .service-card:hover .service-icon {
+            animation: none;
+            transform: scale(1.2) rotate(5deg);
+        }
+
+        /* Scroll-triggered animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease-out;
+        }
+
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         @media (max-width: 768px) {
@@ -269,6 +450,20 @@
             .stats {
                 flex-direction: column;
             }
+
+            .service-card:nth-child(1) { animation-delay: 0.1s; }
+            .service-card:nth-child(2) { animation-delay: 0.2s; }
+            .service-card:nth-child(3) { animation-delay: 0.3s; }
+            .service-card:nth-child(4) { animation-delay: 0.4s; }
+        }
+
+        /* Additional smooth transitions */
+        * {
+            scroll-behavior: smooth;
+        }
+
+        .container > * {
+            animation-fill-mode: both;
         }
     </style>
 </head>
