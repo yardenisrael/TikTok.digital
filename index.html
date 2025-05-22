@@ -15,66 +15,8 @@
             font-family: 'Arial', sans-serif;
             line-height: 1.6;
             color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #f5576c 75%, #4facfe 100%);
-            background-size: 400% 400%;
-            animation: gradientShift 15s ease infinite;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
-            overflow-x: hidden;
-        }
-
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        @keyframes slideInFromRight {
-            from {
-                opacity: 0;
-                transform: translateX(100px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes slideInFromLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-100px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes slideInFromBottom {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInScale {
-            from {
-                opacity: 0;
-                transform: scale(0.8);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
         }
 
         .container {
@@ -85,253 +27,157 @@
 
         .header {
             background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(15px);
-            padding: 25px 0;
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
             text-align: center;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-            animation: slideInFromBottom 1s ease-out;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
         }
 
         .logo {
-            font-size: 3rem;
+            font-size: 2.5rem;
             font-weight: bold;
-            background: linear-gradient(45deg, #ff0050, #ff4081, #9c27b0, #673ab7);
-            background-size: 300% 300%;
-            animation: gradientShift 3s ease infinite, fadeInScale 1.2s ease-out;
+            background: linear-gradient(45deg, #ff0050, #ff4081, #9c27b0);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
 
         .tagline {
-            font-size: 1.3rem;
-            color: #555;
-            margin-bottom: 25px;
-            animation: slideInFromBottom 1.5s ease-out;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 20px;
         }
 
         .whatsapp-contact {
             display: inline-flex;
             align-items: center;
-            background: linear-gradient(135deg, #25d366, #20b358);
+            background: #25d366;
             color: white;
-            padding: 15px 30px;
+            padding: 12px 24px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: bold;
-            font-size: 1.1rem;
-            transition: all 0.4s ease;
-            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
-            animation: slideInFromBottom 2s ease-out;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-top: 10px;
         }
 
         .whatsapp-contact:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 15px 35px rgba(37, 211, 102, 0.5);
-            background: linear-gradient(135deg, #20b358, #25d366);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
         }
 
         .whatsapp-icon {
-            width: 26px;
-            height: 26px;
-            margin-left: 12px;
+            width: 24px;
+            height: 24px;
+            margin-left: 10px;
             fill: white;
-            animation: float 3s ease-in-out infinite;
         }
 
         .main-content {
-            padding: 80px 0;
+            padding: 60px 0;
         }
 
         .hero-section {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(15px);
-            border-radius: 25px;
-            padding: 50px;
-            margin-bottom: 50px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            text-align: center;
             display: flex;
             align-items: center;
-            gap: 50px;
+            gap: 40px;
             flex-wrap: wrap;
-            animation: fadeInScale 1.5s ease-out 0.5s both;
         }
 
         .hero-content {
             flex: 1;
             min-width: 300px;
-            animation: slideInFromLeft 1.8s ease-out 0.8s both;
         }
 
         .hero-image {
             flex: 0 0 auto;
-            animation: slideInFromRight 1.8s ease-out 0.8s both;
-        }
-
-        .clementy-photo-wrapper {
-            width: 288px;
-            height: auto;
-            border-radius: 25px;
-            padding: 4px;
-            background: linear-gradient(45deg, #ff0050, #ff4081, #9c27b0);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
-            transition: all 0.5s ease;
-            animation: float 6s ease-in-out infinite;
-        }
-
-        .clementy-photo-wrapper:hover {
-            transform: scale(1.08) rotate(2deg);
-            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
         }
 
         .clementy-photo {
-            width: 100%;
+            width: 250px;
             height: auto;
-            border-radius: 21px;
-            display: block;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .clementy-photo:hover {
+            transform: scale(1.05);
         }
 
         .hero-title {
-            font-size: 2.8rem;
-            margin-bottom: 25px;
-            background: linear-gradient(45deg, #ff0050, #ff4081, #9c27b0);
-            background-size: 300% 300%;
-            animation: gradientShift 4s ease infinite;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #ff0050, #ff4081);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
         .hero-subtitle {
-            font-size: 1.4rem;
-            color: #555;
-            margin-bottom: 35px;
-            line-height: 1.7;
+            font-size: 1.3rem;
+            color: #666;
+            margin-bottom: 30px;
+            line-height: 1.6;
         }
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 40px;
-            margin-bottom: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
         }
 
         .service-card {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(15px);
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.5s ease;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             text-align: center;
-            opacity: 0;
-            transform: translateY(60px);
         }
-
-        .service-card.animate {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .service-card:nth-child(1).animate { transition-delay: 0.1s; }
-        .service-card:nth-child(2).animate { transition-delay: 0.2s; }
-        .service-card:nth-child(3).animate { transition-delay: 0.3s; }
-        .service-card:nth-child(4).animate { transition-delay: 0.4s; }
 
         .service-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
-            background: rgba(255, 255, 255, 1);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
         }
 
         .service-icon {
-            font-size: 3.5rem;
-            margin-bottom: 25px;
-            animation: float 4s ease-in-out infinite;
+            font-size: 3rem;
+            margin-bottom: 20px;
         }
 
-        .service-card:nth-child(2) .service-icon { animation-delay: 1s; }
-        .service-card:nth-child(3) .service-icon { animation-delay: 2s; }
-        .service-card:nth-child(4) .service-icon { animation-delay: 3s; }
-
         .service-title {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
             color: #333;
             font-weight: bold;
         }
 
         .service-description {
             color: #666;
-            line-height: 1.7;
-            font-size: 1.1rem;
-        }
-
-        .stats {
-            display: flex;
-            justify-content: space-around;
-            margin: 50px 0;
-            flex-wrap: wrap;
-            gap: 30px;
-            animation: slideInFromBottom 2s ease-out 1s both;
-        }
-
-        .stat-item {
-            text-align: center;
-            flex: 1;
-            min-width: 150px;
-            animation: fadeInScale 1s ease-out;
-        }
-
-        .stat-item:nth-child(1) { animation-delay: 2.2s; animation-fill-mode: both; }
-        .stat-item:nth-child(2) { animation-delay: 2.4s; animation-fill-mode: both; }
-        .stat-item:nth-child(3) { animation-delay: 2.6s; animation-fill-mode: both; }
-
-        .stat-number {
-            font-size: 3rem;
-            font-weight: bold;
-            background: linear-gradient(45deg, #ff0050, #ff4081, #9c27b0);
-            background-size: 300% 300%;
-            animation: gradientShift 5s ease infinite;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .stat-label {
-            color: #666;
-            font-weight: 600;
-            font-size: 1.1rem;
-            margin-top: 10px;
+            line-height: 1.6;
         }
 
         .tiktok-section {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(15px);
-            border-radius: 25px;
-            padding: 50px;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
             text-align: center;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            opacity: 0;
-            transform: translateY(60px);
-            transition: all 0.8s ease;
-        }
-
-        .tiktok-section.animate {
-            opacity: 1;
-            transform: translateY(0);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
         }
 
         .tiktok-title {
-            font-size: 2.2rem;
-            margin-bottom: 25px;
+            font-size: 2rem;
+            margin-bottom: 20px;
             color: #333;
-            animation: slideInFromLeft 1s ease-out 2.5s both;
         }
 
         .tiktok-link {
@@ -339,96 +185,90 @@
             align-items: center;
             background: linear-gradient(45deg, #ff0050, #000);
             color: white;
-            padding: 18px 35px;
+            padding: 15px 30px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: bold;
-            font-size: 1.2rem;
-            transition: all 0.4s ease;
-            margin-top: 25px;
-            box-shadow: 0 10px 30px rgba(255, 0, 80, 0.3);
-            animation: slideInFromRight 1s ease-out 3s both;
+            font-size: 1.1rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-top: 20px;
         }
 
         .tiktok-link:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 15px 40px rgba(255, 0, 80, 0.5);
-            background: linear-gradient(45deg, #000, #ff0050);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(255, 0, 80, 0.3);
         }
 
         .tiktok-icon {
-            width: 26px;
-            height: 26px;
-            margin-left: 15px;
-            animation: float 2s ease-in-out infinite;
+            width: 24px;
+            height: 24px;
+            margin-left: 12px;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            margin: 40px 0;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .stat-item {
+            text-align: center;
+            flex: 1;
+            min-width: 150px;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, #ff0050, #ff4081);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            color: #666;
+            font-weight: 500;
         }
 
         .footer {
             background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(15px);
             text-align: center;
-            padding: 40px 0;
-            margin-top: 50px;
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-            animation: slideInFromBottom 1s ease-out 3.5s both;
+            padding: 30px 0;
+            margin-top: 40px;
         }
 
         @media (max-width: 768px) {
             .logo {
-                font-size: 2.2rem;
+                font-size: 2rem;
             }
 
             .hero-title {
-                font-size: 2.2rem;
+                font-size: 2rem;
             }
 
             .hero-subtitle {
-                font-size: 1.2rem;
+                font-size: 1.1rem;
             }
 
             .hero-section {
                 flex-direction: column;
                 text-align: center;
-                padding: 35px;
             }
 
-            .clementy-photo-wrapper {
-                width: 228px;
+            .clementy-photo {
+                width: 200px;
             }
 
             .services-grid {
                 grid-template-columns: 1fr;
-                gap: 25px;
-            }
-
-            .service-card {
-                padding: 30px;
             }
 
             .stats {
                 flex-direction: column;
             }
-
-            .tiktok-section {
-                padding: 35px;
-            }
-
-            .stat-number {
-                font-size: 2.5rem;
-            }
-        }
-
-        /* עוד אנימציות */
-        .service-card:hover .service-icon {
-            animation: none;
-            transform: scale(1.2) rotate(10deg);
-        }
-
-        .tiktok-section p {
-            animation: slideInFromBottom 1s ease-out 2.8s both;
-            font-size: 1.1rem;
-            color: #666;
-            line-height: 1.6;
         }
     </style>
 </head>
@@ -457,12 +297,10 @@
                 </div>
                 
                 <div class="hero-image">
-                    <div class="clementy-photo-wrapper">
-                        <img src="klementy.png" alt="קלמנטי - יוצר תוכן טיקטוק" class="clementy-photo">
-                    </div>
+                    <img src="klementy.png" alt="קלמנטי - יוצר תוכן טיקטוק" class="clementy-photo">
                 </div>
                 
-                <div style="width: 100%; margin-top: 40px;">
+                <div style="width: 100%; margin-top: 30px;">
                     <div class="stats">
                         <div class="stat-item">
                             <div class="stat-number">7.3K</div>
@@ -525,7 +363,7 @@
                     צפה בעמוד הטיקטוק שלי
                 </a>
                 
-                <p style="margin-top: 25px; color: #666; font-size: 0.95rem;">
+                <p style="margin-top: 20px; color: #666; font-size: 0.9rem;">
                     *העמוד מכיל דוגמאות מעשיות של פרויקטים מוצלחים שביצעתי לעסקים ושהביאו לחשיפה משמעותית
                 </p>
             </section>
@@ -537,50 +375,5 @@
             <p>&copy; 2025 קלמנטי - יוצר תוכן טיקטוק מקצועי. כל הזכויות שמורות.</p>
         </div>
     </footer>
-
-    <script>
-        // Intersection Observer for scroll-triggered animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate');
-                }
-            });
-        }, observerOptions);
-
-        // Observe all service cards
-        document.addEventListener('DOMContentLoaded', () => {
-            const serviceCards = document.querySelectorAll('.service-card');
-            const tiktokSection = document.querySelector('.tiktok-section');
-            
-            serviceCards.forEach(card => {
-                observer.observe(card);
-            });
-            
-            if (tiktokSection) {
-                observer.observe(tiktokSection);
-            }
-        });
-
-        // Add extra interactivity
-        document.addEventListener('DOMContentLoaded', () => {
-            const cards = document.querySelectorAll('.service-card');
-            
-            cards.forEach(card => {
-                card.addEventListener('mouseenter', () => {
-                    card.style.transform = 'translateY(-15px) scale(1.03)';
-                });
-                
-                card.addEventListener('mouseleave', () => {
-                    card.style.transform = 'translateY(0) scale(1)';
-                });
-            });
-        });
-    </script>
 </body>
 </html>
