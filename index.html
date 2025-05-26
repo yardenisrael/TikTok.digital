@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>קלמנטי - יוצר תוכן טיקטוק מקצועי</title>
+    <title>אדם וצודקת עושים שיווק - יוצר תוכן טיקטוק מקצועי</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=Urbanist:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500&family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -207,27 +207,134 @@
         }
 
         .clementy-photo {
-            width: 250px;
+            width: 220px;
             height: auto;
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s ease;
+            aspect-ratio: 647/720;
+            object-fit: cover;
         }
 
         .clementy-photo:hover {
             transform: scale(1.05);
         }
 
+        /* Enhanced TikTok-style hero title */
         .hero-title {
             font-family: 'Poppins', sans-serif;
             font-size: 2.75rem;
-            font-weight: 700;
+            font-weight: 900;
             margin-bottom: 20px;
-            background: linear-gradient(45deg, #ff0050, #ff4081);
+            letter-spacing: -0.02em;
+            position: relative;
+            display: inline-block;
+            animation: titleFloat 3s ease-in-out infinite;
+        }
+
+        @keyframes titleFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        /* TikTok-style animated text */
+        .hero-title .tiktok-word {
+            position: relative;
+            display: inline-block;
+            color: #000;
+            text-shadow: 
+                2px 2px 0 #69C9D0,
+                -2px -2px 0 #EE1D52,
+                2px -2px 0 #69C9D0,
+                -2px 2px 0 #EE1D52;
+            animation: glitch 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glitch {
+            0% {
+                text-shadow: 
+                    2px 2px 0 #69C9D0,
+                    -2px -2px 0 #EE1D52,
+                    2px -2px 0 #69C9D0,
+                    -2px 2px 0 #EE1D52;
+                transform: translate(0);
+            }
+            20% {
+                text-shadow: 
+                    2px 2px 0 #EE1D52,
+                    -2px -2px 0 #69C9D0,
+                    2px -2px 0 #EE1D52,
+                    -2px 2px 0 #69C9D0;
+                transform: translate(-2px, 2px);
+            }
+            40% {
+                text-shadow: 
+                    3px 3px 0 #69C9D0,
+                    -3px -3px 0 #EE1D52,
+                    3px -3px 0 #69C9D0,
+                    -3px 3px 0 #EE1D52;
+                transform: translate(-2px, -2px);
+            }
+            60% {
+                text-shadow: 
+                    2px 2px 0 #EE1D52,
+                    -2px -2px 0 #69C9D0,
+                    2px -2px 0 #EE1D52,
+                    -2px 2px 0 #69C9D0;
+                transform: translate(2px, 2px);
+            }
+            80% {
+                text-shadow: 
+                    3px 3px 0 #69C9D0,
+                    -3px -3px 0 #EE1D52,
+                    3px -3px 0 #69C9D0,
+                    -3px 3px 0 #EE1D52;
+                transform: translate(2px, -2px);
+            }
+            100% {
+                text-shadow: 
+                    2px 2px 0 #69C9D0,
+                    -2px -2px 0 #EE1D52,
+                    2px -2px 0 #69C9D0,
+                    -2px 2px 0 #EE1D52;
+                transform: translate(0);
+            }
+        }
+
+        /* Rainbow shimmer effect for the rest of the title */
+        .hero-title .regular-text {
+            background: linear-gradient(90deg, 
+                #EE1D52 0%, 
+                #69C9D0 25%, 
+                #000 50%, 
+                #69C9D0 75%, 
+                #EE1D52 100%
+            );
+            background-size: 200% auto;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            letter-spacing: -0.02em;
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 200% 50%; }
+        }
+
+        /* TikTok icon animation */
+        .tiktok-icon-animated {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            margin: 0 10px;
+            vertical-align: middle;
+            animation: bounce 1s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(10deg); }
         }
 
         .hero-subtitle {
@@ -318,6 +425,162 @@
             transform: translateX(0);
         }
 
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            margin: 40px 0;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .stat-item {
+            text-align: center;
+            flex: 1;
+            min-width: 150px;
+        }
+
+        .stat-number {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 800;
+            background: linear-gradient(45deg, #ff0050, #ff4081);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            letter-spacing: -0.02em;
+        }
+
+        .stat-label {
+            font-family: 'Montserrat', sans-serif;
+            color: #666;
+            font-weight: 500;
+            font-size: 1.05rem;
+            letter-spacing: 0.01em;
+        }
+
+        .projects-section {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease;
+        }
+
+        .projects-section.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .projects-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #333;
+            letter-spacing: -0.01em;
+        }
+
+        .projects-subtitle {
+            font-family: 'Lexend', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 400;
+            color: #555;
+            line-height: 1.7;
+            letter-spacing: 0.01em;
+            margin-bottom: 40px;
+        }
+
+        .videos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .video-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .video-item:nth-child(1) { animation-delay: 0.1s; }
+        .video-item:nth-child(2) { animation-delay: 0.2s; }
+        .video-item:nth-child(3) { animation-delay: 0.3s; }
+        .video-item:nth-child(4) { animation-delay: 0.4s; }
+        .video-item:nth-child(5) { animation-delay: 0.5s; }
+        .video-item:nth-child(6) { animation-delay: 0.6s; }
+        .video-item:nth-child(7) { animation-delay: 0.7s; }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .video-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+
+        .project-video {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .video-item:hover .project-video {
+            transform: scale(1.05);
+        }
+
+        .video-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+            color: white;
+            padding: 20px;
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .video-item:hover .video-overlay {
+            transform: translateX(0);
+        }
+
+        .video-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .video-description {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
         .tiktok-section {
             background: white;
             border-radius: 20px;
@@ -379,43 +642,6 @@
             margin-left: 12px;
         }
 
-        .stats {
-            display: flex;
-            justify-content: space-around;
-            margin: 40px 0;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .stat-item {
-            text-align: center;
-            flex: 1;
-            min-width: 150px;
-        }
-
-        .stat-number {
-            font-family: 'Poppins', sans-serif;
-            font-size: 2.8rem;
-            font-weight: 800;
-            background: linear-gradient(45deg, #ff0050, #ff4081);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            min-height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            letter-spacing: -0.02em;
-        }
-
-        .stat-label {
-            font-family: 'Montserrat', sans-serif;
-            color: #666;
-            font-weight: 500;
-            font-size: 1.05rem;
-            letter-spacing: 0.01em;
-        }
-
         .footer {
             background: rgba(255, 255, 255, 0.95);
             text-align: center;
@@ -443,6 +669,19 @@
                 font-size: 2.2rem;
             }
 
+            .hero-title .tiktok-word {
+                text-shadow: 
+                    1px 1px 0 #69C9D0,
+                    -1px -1px 0 #EE1D52,
+                    1px -1px 0 #69C9D0,
+                    -1px 1px 0 #EE1D52;
+            }
+
+            .tiktok-icon-animated {
+                width: 32px;
+                height: 32px;
+            }
+
             .hero-subtitle {
                 font-size: 1.2rem;
             }
@@ -458,7 +697,7 @@
             }
 
             .clementy-photo {
-                width: 200px;
+                width: 180px;
             }
 
             .services-grid {
@@ -480,6 +719,23 @@
 
             .service-description {
                 font-size: 1rem;
+            }
+
+            .projects-section {
+                padding: 30px 20px;
+            }
+
+            .projects-title {
+                font-size: 1.9rem;
+            }
+
+            .videos-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .project-video {
+                height: 350px;
             }
 
             .tiktok-section {
@@ -519,13 +775,34 @@
                 padding: 25px 15px;
             }
 
+            .projects-section {
+                padding: 25px 15px;
+            }
+
             .tiktok-section {
                 padding: 25px 15px;
                 transform: translateX(20px);
             }
 
+            .clementy-photo {
+                width: 160px;
+            }
+
+            .project-video {
+                height: 300px;
+            }
+
             .service-card:hover .service-icon {
                 transform: scale(1.15) translateY(-4px);
+            }
+
+            .hero-title {
+                font-size: 1.8rem;
+            }
+
+            .tiktok-icon-animated {
+                width: 28px;
+                height: 28px;
             }
         }
 
@@ -534,13 +811,18 @@
             .service-card:active .service-icon {
                 transform: scale(1.3) translateY(-8px);
             }
+            
+            .video-overlay {
+                transform: translateX(0);
+                background: rgba(0, 0, 0, 0.5);
+            }
         }
     </style>
 </head>
 <body>
     <header class="header">
         <div class="container">
-            <div class="logo">קלמנטי</div>
+            <div class="logo">אדם וצודקת עושים שיווק</div>
             <div class="tagline">יוצר תוכן מקצועי ב<span class="tiktok-highlight">טיקטוק</span> • מתמחה בסרטונים ויראליים</div>
             <a href="https://wa.me/972559512482" class="whatsapp-contact" target="_blank">
                 <svg class="whatsapp-icon" viewBox="0 0 24 24">
@@ -555,14 +837,23 @@
         <div class="container">
             <section class="hero-section">
                 <div class="hero-content">
-                    <h1 class="hero-title">הפוך את העסק שלך לויראלי בטיקטוק!</h1>
+                    <h1 class="hero-title">
+                        <span class="regular-text">הפוך את העסק שלך</span>
+                        <svg class="tiktok-icon-animated" viewBox="0 0 24 24">
+                            <path fill="#000" d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.245V2h-3.445v13.672a2.896 2.896 0 0 1-2.909 2.909 2.896 2.896 0 0 1-2.909-2.909 2.896 2.896 0 0 1 2.909-2.909c.301 0 .586.057.852.144V9.44a6.467 6.467 0 0 0-.852-.058 6.426 6.426 0 0 0-6.437 6.437 6.426 6.426 0 0 0 6.437 6.437 6.426 6.426 0 0 0 6.437-6.437V8.817a8.19 8.19 0 0 0 4.77 1.52V6.79a4.831 4.831 0 0 1-.083-.104z"/>
+                            <path fill="#69C9D0" d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.245V2h-3.445v13.672a2.896 2.896 0 0 1-2.909 2.909 2.896 2.896 0 0 1-2.909-2.909 2.896 2.896 0 0 1 2.909-2.909c.301 0 .586.057.852.144V9.44a6.467 6.467 0 0 0-.852-.058 6.426 6.426 0 0 0-6.437 6.437 6.426 6.426 0 0 0 6.437 6.437 6.426 6.426 0 0 0 6.437-6.437V8.817a8.19 8.19 0 0 0 4.77 1.52V6.79a4.831 4.831 0 0 1-.083-.104z" opacity="0.6"/>
+                            <path fill="#EE1D52" d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.245V2h-3.445v13.672a2.896 2.896 0 0 1-2.909 2.909 2.896 2.896 0 0 1-2.909-2.909 2.896 2.896 0 0 1 2.909-2.909c.301 0 .586.057.852.144V9.44a6.467 6.467 0 0 0-.852-.058 6.426 6.426 0 0 0-6.437 6.437 6.426 6.426 0 0 0 6.437 6.437 6.426 6.426 0 0 0 6.437-6.437V8.817a8.19 8.19 0 0 0 4.77 1.52V6.79a4.831 4.831 0 0 1-.083-.104z" opacity="0.6"/>
+                        </svg>
+                        <span class="tiktok-word">לוויראלי</span>
+                        <span class="regular-text">בטיקטוק!</span>
+                    </h1>
                     <p class="hero-subtitle">
                         עם 3 שנות ניסיון בשיווק ופרסום בטיקטוק, אני מביא לעסק שלך את הכלים הכי מתקדמים להגדלת החשיפה והגעה לקהל רחב יותר. מתמחה ביצירת סרטונים ויראליים שמשיגים מיליוני צפיות ומביאים תוצאות מדידות.
                     </p>
                 </div>
                 
                 <div class="hero-image">
-                    <img src="klementy.png" alt="קלמנטי - יוצר תוכן טיקטוק" class="clementy-photo">
+                    <img src="klementy.jpeg" alt="קלמנטי - יוצר תוכן טיקטוק" class="clementy-photo">
                 </div>
                 
                 <div style="width: 100%; margin-top: 30px;">
@@ -578,6 +869,85 @@
                         <div class="stat-item">
                             <div class="stat-number" data-target="3" data-suffix="+">0</div>
                             <div class="stat-label">שנות ניסיון</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="projects-section">
+                <h2 class="projects-title">פרויקטים שלי</h2>
+                <p class="projects-subtitle">
+                    הנה מבחר מהעבודות הכי מוצלחות שלי - סרטונים שהיו ויראליים וזכו לחשיפה עצומה בטיקטוק. כל פרויקט מראה את היכולת שלי ליצור תוכן מקורי ומושך שמביא תוצאות.
+                </p>
+                
+                <div class="videos-grid">
+                    <div class="video-item">
+                        <video class="project-video" autoplay muted loop playsinline>
+                            <source src="0.MP4" type="video/mp4">
+                            הדפדפן שלך לא תומך בהצגת וידאו.
+                        </video>
+                        <div class="video-overlay">
+                            <div class="video-title"> #1</div>
+                        </div>
+                    </div>
+                    
+                    <div class="video-item">
+                        <video class="project-video" autoplay muted loop playsinline>
+                            <source src="1.MP4" type="video/mp4">
+                            הדפדפן שלך לא תומך בהצגת וידאו.
+                        </video>
+                        <div class="video-overlay">
+                            <div class="video-title"> #2</div>
+                        </div>
+                    </div>
+                    
+                    <div class="video-item">
+                        <video class="project-video" autoplay muted loop playsinline>
+                            <source src="2.MP4" type="video/mp4">
+                            הדפדפן שלך לא תומך בהצגת וידאו.
+                        </video>
+                        <div class="video-overlay">
+                            <div class="video-title"> #3</div>
+                        </div>
+                    </div>
+                    
+                    <div class="video-item">
+                        <video class="project-video" autoplay muted loop playsinline>
+                            <source src="3.MP4" type="video/mp4">
+                            הדפדפן שלך לא תומך בהצגת וידאו.
+                        </video>
+                        <div class="video-overlay">
+                            <div class="video-title"> #4</div>
+                        </div>
+                    </div>
+                    
+                    <div class="video-item">
+                        <video class="project-video" autoplay muted loop playsinline>
+                            <source src="4.MP4" type="video/mp4">
+                            הדפדפן שלך לא תומך בהצגת וידאו.
+                        </video>
+                        <div class="video-overlay">
+                            <div class="video-title"> #5</div>
+                        </div>
+                    </div>
+                    
+                    <div class="video-item">
+                        <video class="project-video" autoplay muted loop playsinline>
+                            <source src="5.MP4" type="video/mp4">
+                            הדפדפן שלך לא תומך בהצגת וידאו.
+                        </video>
+                        <div class="video-overlay">
+                            <div class="video-title"> #6</div>
+                        </div>
+                    </div>
+                    
+                    <div class="video-item">
+                        <video class="project-video" autoplay muted loop playsinline>
+                            <source src="6.MP4" type="video/mp4">
+                            הדפדפן שלך לא תומך בהצגת וידאו.
+                        </video>
+                        <div class="video-overlay">
+                            <div class="video-title"> #7</div>
                         </div>
                     </div>
                 </div>
@@ -633,7 +1003,7 @@
 
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 קלמנטי - יוצר תוכן טיקטוק מקצועי. כל הזכויות שמורות.</p>
+            <p>&copy; 2025 אדם וצודקת עושים שיווק - יוצר תוכן טיקטוק מקצועי. כל הזכויות שמורות.</p>
         </div>
     </footer>
 
@@ -737,6 +1107,12 @@
                 card.style.transitionDelay = `${index * 0.15}s`;
                 observer.observe(card);
             });
+
+            // Observe projects section
+            const projectsSection = document.querySelector('.projects-section');
+            if (projectsSection) {
+                observer.observe(projectsSection);
+            }
 
             // Observe TikTok section
             const tiktokSection = document.querySelector('.tiktok-section');
